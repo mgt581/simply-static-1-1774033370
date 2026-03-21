@@ -170,6 +170,30 @@ gtag("config", "GT-K8H9XDRC");
 .main-header-menu li:hover > a, .main-header-menu li:hover > .ast-menu-toggle, .main-header-menu .ast-masthead-custom-menu-items a:hover, .main-header-menu li.focus > a, .main-header-menu li.focus > .ast-menu-toggle, .main-header-menu .current-menu-item > a, .main-header-menu .current-menu-ancestor > a, .main-header-menu .current_page_item > a, .main-header-menu .current-menu-item > .ast-menu-toggle, .main-header-menu .current-menu-ancestor > .ast-menu-toggle, .main-header-menu .current_page_item > .ast-menu-toggle {
     color: #fff;
 }		
+/* Remove mobile top gap - no WordPress admin bar on static site */
+html, body, .elementor-section-wrap {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+/* Remove gap under header */
+header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove Elementor top spacing on first section */
+section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Fix video/image containers that create invisible spacing */
+.elementor-widget-image,
+.elementor-widget-video,
+.elementor-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
 /* Match gap color to header background */
 body {
     background-color: #424952 !important;
