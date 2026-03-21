@@ -1,0 +1,63 @@
+			<input type="hidden" id="surbma-gpga-popupdebug" value="0">
+<script type="text/javascript">
+	function surbma_gpga_openModal() {
+		UIkit.modal(('#surbma-gpga-modal'), {center: false,keyboard: false,bgclose: false}).show();
+	}
+	function surbma_gpga_openSnackbar() {
+		Snackbar.show({
+			text: 'We use Cookies on our website to improve your experience.',
+			textColor: '#fff',
+			pos: 'bottom-left',
+			width: 'auto',
+			actionText: 'Cookie settings',
+			actionTextColor: '#4caf50',
+			backgroundColor: '#323232',
+			duration: 0,
+			onActionClick: function(element) {
+				jQuery(element).css('opacity', 0);
+				surbma_gpga_openModal();
+			}
+		});
+	}
+		jQuery(document).ready(function($) {
+				// https://www.polonel.com/snackbar/
+		var show_snackbar = 0;
+		if( $('#surbma-gpga-popupdebug').val() == '1' || !surbma_gpga_readCookie('surbma-gpga') ) {
+			show_snackbar = 1;
+		}
+		if( show_snackbar == 1 ) {
+			surbma_gpga_openSnackbar();
+		}
+			});
+	</script>
+<div id="surbma-gpga-modal" class="uk-modal surbma-gpga-normal">
+	<div class="uk-modal-dialog">
+		<div class="uk-modal-header">
+			<h2><a href="#"></a>We use cookies on our website to improve your experience.</h2>
+		</div>
+		<div class="uk-modal-content">
+			<div class="uk-overflow-container"><p>Please confirm, if you accept our cookies. You can also decline them, so you can continue to visit our website without data being collected.</p>
+</div>		</div>
+		<div class="uk-modal-footer surbma-gpga-button-left">
+			<button id="button1" type="button" class="uk-button uk-button-large uk-button-default uk-modal-close">Decline</button>
+			<span> </span>
+			<button id="button2" type="button" class="uk-button uk-button-large uk-button-primary uk-modal-close">Accept</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	function surbma_gpga_setCookie(cookieName,cookieValue) {
+		var name = cookieName;
+		var value = cookieValue;
+		var d = new Date();
+		d.setTime(d.getTime() + (30*24*60*60*1000));
+		var expires = "expires="+ d.toUTCString();
+		document.cookie = name + "=" + value + ";" + expires + ";path=/";
+	}
+	document.getElementById("button1").onclick = function() {
+		surbma_gpga_setCookie('surbma-gpga','no');
+	};
+	document.getElementById("button2").onclick = function() {
+		surbma_gpga_setCookie('surbma-gpga','yes');
+	};
+</script>
