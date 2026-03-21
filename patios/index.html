@@ -175,6 +175,30 @@ gtag("config", "GT-K8H9XDRC");
 .main-header-menu li:hover > a, .main-header-menu li:hover > .ast-menu-toggle, .main-header-menu .ast-masthead-custom-menu-items a:hover, .main-header-menu li.focus > a, .main-header-menu li.focus > .ast-menu-toggle, .main-header-menu .current-menu-item > a, .main-header-menu .current-menu-ancestor > a, .main-header-menu .current_page_item > a, .main-header-menu .current-menu-item > .ast-menu-toggle, .main-header-menu .current-menu-ancestor > .ast-menu-toggle, .main-header-menu .current_page_item > .ast-menu-toggle {
     color: #fff;
 }		
+/* Remove mobile top gap - no WordPress admin bar on static site */
+html, body, .elementor-section-wrap {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+/* Remove gap under header */
+header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove Elementor top spacing on first section */
+section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Fix video/image containers that create invisible spacing */
+.elementor-widget-image,
+.elementor-widget-video,
+.elementor-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
 /* Match gap color to header background */
 body {
     background-color: #424952 !important;
@@ -279,7 +303,7 @@ body {
 				</div>
 					</div>
 		</div>
-				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-219d990" data-id="219d990" data-element_type="column" data-e-type="column">
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-219d990 elementor-hidden-mobile" data-id="219d990" data-element_type="column" data-e-type="column">
 			<div class="elementor-widget-wrap elementor-element-populated">
 						<div class="elementor-element elementor-element-99e0a64 elementor-widget__width-initial elementor-hidden-mobile elementor-align-center elementor-widget elementor-widget-button" data-id="99e0a64" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
