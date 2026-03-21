@@ -1,0 +1,43 @@
+<!--
+  Service Card Component Template
+  ================================
+  Copy-paste template for a single service card inside the homepage carousel.
+
+  HOW TO USE (manual copy-paste pattern):
+  ----------------------------------------
+  1. Copy this entire block.
+  2. Paste it inside the `.swiper-wrapper` <div> in index.html.
+  3. Replace every {{placeholder}} token with the actual value for that card
+     (see the parameters table below).
+  4. Repeat for each service you want to list.
+
+  NOTE: This file is a static template only — it is NOT loaded automatically
+  by component-loader.js. The {{...}} tokens must be substituted manually or
+  via a separate build/template step before the HTML is deployed.
+
+  Parameters:
+    {{image_src}}   – path to the card background image, e.g.
+                      /wp-content/uploads/2018/09/driveway3.jpg
+    {{image_alt}}   – image alt text (usually the same as {{name}})
+    {{name}}        – service name shown as the card title, e.g. BLOCK PAVING
+    {{description}} – one-sentence description of the service shown as overlay
+                      text and in the <cite> subtitle
+-->
+<div class="swiper-slide" role="group" aria-roledescription="slide">
+	<div class="elementor-testimonial">
+		<div class="elementor-testimonial__content">
+			<div class="elementor-testimonial__text">
+				{{description}}
+			</div>
+		</div>
+		<div class="elementor-testimonial__footer">
+			<div class="elementor-testimonial__image">
+				<img decoding="async" src="{{image_src}}" alt="{{image_alt}}">
+			</div>
+			<cite class="elementor-testimonial__cite">
+				<span class="elementor-testimonial__name">{{name}}</span>
+				<span class="elementor-testimonial__title">{{description}}</span>
+			</cite>
+		</div>
+	</div>
+</div>
